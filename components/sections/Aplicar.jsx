@@ -39,7 +39,7 @@ export default function Aplicar() {
           <img src="/assets/logo-shield-dark.png" alt="" aria-hidden="true" style={{ position: "absolute", right: -50, top: -40, height: 340, opacity: 0.12, pointerEvents: "none" }} />
           <div className="pz-aplicar" style={{ position: "relative" }}>
             <div>
-              <SectionLabel>Aplicação</SectionLabel>
+              <SectionLabel>Inscrição</SectionLabel>
               <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 38px)", margin: "16px 0 16px" }}>Você já faz eco com segurança. Falta pouco pra fazer a carótida igual.</h2>
               <p style={{ color: "rgba(255,255,255,0.86)", fontSize: 16.5, lineHeight: 1.6, margin: "0 0 24px" }}>
                 Três dias de prática real fecham esse ciclo. Deixe seus dados e nossa equipe volta com as datas
@@ -61,7 +61,7 @@ export default function Aplicar() {
                   <div className="success-check" style={{ width: 56, height: 56, borderRadius: "50%", backgroundImage: "var(--pz-gradient)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 28, fontWeight: 700, marginBottom: 18 }}>
                     ✓
                   </div>
-                  <h3 className="success-fade" style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 24, color: "#fff", margin: "0 0 10px" }}>Aplicação recebida</h3>
+                  <h3 className="success-fade" style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 24, color: "#fff", margin: "0 0 10px" }}>Inscrição recebida</h3>
                   <p className="success-fade" style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, lineHeight: 1.6, margin: "0 0 22px" }}>
                     Nossa equipe entra em contato com as próximas datas. Se preferir, fale agora pelo WhatsApp.
                   </p>
@@ -108,7 +108,7 @@ export default function Aplicar() {
                     </div>
                   </div>
                   <Button type="submit" variant="primary" size="lg" style={{ width: "100%", borderRadius: 12, marginTop: 4 }}>
-                    Enviar minha aplicação
+                    Enviar minha inscrição
                   </Button>
                   <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 12.5, textAlign: "center", margin: 0 }}>Seus dados são usados apenas para contato sobre a imersão.</p>
                 </form>

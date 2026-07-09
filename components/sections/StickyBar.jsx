@@ -48,7 +48,7 @@ export default function StickyBar() {
         </div>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
           <Button variant="primary" size="md" style={{ borderRadius: 10, whiteSpace: "nowrap" }}>
-            Quero aplicar
+            Quero me inscrever
           </Button>
         </a>
         <button onClick={() => setClosed(true)} aria-label="Fechar" style={{ background: "none", border: "none", color: "var(--text-muted)", cursor: "pointer", fontSize: 20, lineHeight: 1, padding: "0 8px" }}>

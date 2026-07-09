@@ -23,12 +23,10 @@ export default function Conteudos() {
     <section id="conteudos" style={{ padding: "88px 0 40px", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, backgroundImage: "var(--pz-glow)", opacity: 0.6, pointerEvents: "none" }} />
       <div className="pz-wrap" style={{ position: "relative" }}>
-        <div ref={headRef} className="gsap-reveal pz-conteudos-head">
-          <div>
-            <div style={{ height: 2, width: 120, backgroundImage: "var(--pz-gradient)", marginBottom: 20 }} />
-            <SectionLabel>A virada</SectionLabel>
-          </div>
-          <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 38px)" }}>
+        <div ref={headRef} className="gsap-reveal" style={{ textAlign: "center", maxWidth: 860, margin: "0 auto 48px" }}>
+          <div style={{ height: 2, width: 120, backgroundImage: "var(--pz-gradient)", margin: "0 auto 20px" }} />
+          <SectionLabel>A virada</SectionLabel>
+          <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 38px)", marginTop: 16 }}>
             O que faltou nunca foi teoria. Foi <span style={grad}>aparelho na mão</span>, em paciente real, com a orientação certa.
           </h2>
         </div>
@@ -44,7 +42,6 @@ export default function Conteudos() {
                 <span style={{ width: 34, height: 34, borderRadius: 9, backgroundImage: "var(--pz-gradient)", color: "#fff", fontWeight: 800, fontSize: 15, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-sans)" }}>
                   {c.n}
                 </span>
-                <span style={{ fontSize: 12, fontWeight: 600, color: "var(--text-secondary)", border: "1px solid var(--border-strong)", borderRadius: 999, padding: "4px 11px" }}>{c.chip}</span>
               </div>
               <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 18, lineHeight: 1.25, margin: "0 0 14px", color: "#fff" }}>{c.t}</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>

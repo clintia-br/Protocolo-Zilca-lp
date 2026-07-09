@@ -52,12 +52,12 @@ export default function Mentor() {
       </div>
       <div className="pz-wrap" style={{ position: "relative" }}>
         <div className="pz-mentor">
-          <div style={{ position: "relative", alignSelf: "stretch", minHeight: 440 }}>
+          <div style={{ position: "relative", alignSelf: "stretch", overflow: "hidden", borderTopLeftRadius: 24, borderBottomLeftRadius: 24, minHeight: 440 }}>
             <img
               ref={imgRef}
               src="/assets/dr-cassio.jpg"
               alt="Dr. Cássio Bermudes"
-              style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "auto", minHeight: "100%", objectFit: "cover", objectPosition: "bottom center", borderBottomLeftRadius: 24, pointerEvents: "none" }}
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", pointerEvents: "none" }}
             />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, transparent 68%, var(--surface-raised))", borderBottomLeftRadius: 24, pointerEvents: "none" }} />
           </div>

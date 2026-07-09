@@ -97,7 +97,7 @@ export default function Niveis() {
                   size="md"
                   style={n.destaque ? { width: "100%", borderRadius: 12, background: "var(--pz-ink)", backgroundImage: "none", boxShadow: "none" } : { width: "100%", borderRadius: 12 }}
                 >
-                  Quero aplicar
+                  Quero me inscrever
                 </Button>
               </a>
             </div>

@@ -16,27 +16,23 @@ export default function TresDias() {
   const textRef = useRef(null);
   const mediaRef = useRef(null);
   const img1Ref = useRef(null);
-  const img2Ref = useRef(null);
 
   useReveal(textRef);
 
   useGSAP(
     () => {
-      [img1Ref, img2Ref].forEach((r, i) => {
-        if (!r.current) return;
-        gsap.fromTo(
-          r.current,
-          { clipPath: "inset(0 0 100% 0)", scale: 1.1 },
-          {
-            clipPath: "inset(0 0 0% 0)",
-            scale: 1,
-            duration: 1.1,
-            delay: i * 0.15,
-            ease: "pzOut",
-            scrollTrigger: { trigger: mediaRef.current, start: "top 82%", once: true },
-          }
-        );
-      });
+      if (!img1Ref.current) return;
+      gsap.fromTo(
+        img1Ref.current,
+        { clipPath: "inset(0 0 100% 0)", scale: 1.1 },
+        {
+          clipPath: "inset(0 0 0% 0)",
+          scale: 1,
+          duration: 1.1,
+          ease: "pzOut",
+          scrollTrigger: { trigger: mediaRef.current, start: "top 82%", once: true },
+        }
+      );
     },
     { scope: mediaRef }
   );
@@ -48,7 +44,7 @@ export default function TresDias() {
           <div
             ref={textRef}
             className="gsap-reveal"
-            style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top)", padding: "48px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}
+            style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top)", padding: "48px 48px", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}
           >
             <SectionLabel>Como são os três dias</SectionLabel>
             <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.2vw, 32px)", margin: "16px 0 16px" }}>Formato concentrado, pra pesar o mínimo na sua agenda.</h2>
@@ -66,17 +62,13 @@ export default function TresDias() {
               ))}
             </div>
           </div>
-          <div ref={mediaRef} className="pz-tresdias-media">
-            <div style={{ borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-subtle)", position: "relative", minHeight: 200 }}>
-              <img ref={img1Ref} src="/assets/photo-ultrasound.jpg" alt="Doppler de carótida em paciente real" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 55%, rgba(1,8,18,0.5))" }} />
+          <div ref={mediaRef}>
+            <div style={{ borderRadius: 24, overflow: "hidden", position: "relative", border: "1px solid var(--border-subtle)", minHeight: 300, height: "100%" }}>
+              <img ref={img1Ref} src="/assets/imersao-real.jpg" alt="Imersão prática — Dr. Cássio conduzindo o exame ao lado do aluno" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 55%, rgba(1,8,18,0.55))", pointerEvents: "none" }} />
               <span style={{ position: "absolute", left: 20, bottom: 16, color: "#fff", fontSize: 13, fontWeight: 600, background: "rgba(1,8,18,0.5)", backdropFilter: "blur(6px)", padding: "6px 12px", borderRadius: 999, border: "1px solid var(--border-subtle)" }}>
-                Doppler de carótida · caso real
+                Imersão em paciente real · eco + esteira + Doppler
               </span>
-            </div>
-            <div style={{ borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-subtle)", position: "relative", minHeight: 160 }}>
-              <img ref={img2Ref} src="/assets/imersao-real.jpg" alt="Bastidores da imersão — aluno operando o transdutor sob supervisão" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 60%, rgba(1,8,18,0.45))" }} />
             </div>
           </div>
         </div>

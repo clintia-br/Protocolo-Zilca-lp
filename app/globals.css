@@ -264,29 +264,16 @@ img {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.pz-conteudos-head {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 40px;
-  align-items: center;
-  margin-bottom: 48px;
-}
 .pz-tresdias {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 24px;
   align-items: stretch;
 }
-.pz-tresdias-media {
+.pz-muda-grid {
   display: grid;
-  grid-template-rows: 1.2fr 1fr;
-  gap: 24px;
-}
-.pz-muda {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 48px;
 }
 .pz-mentor {
   display: grid;
@@ -317,9 +304,7 @@ img {
 
 @media (max-width: 960px) {
   .pz-hero-grid,
-  .pz-conteudos-head,
   .pz-tresdias,
-  .pz-muda,
   .pz-mentor,
   .pz-faq,
   .pz-aplicar {
@@ -341,6 +326,7 @@ img {
   .pz-stats,
   .pz-grid-4,
   .pz-grid-3,
+  .pz-muda-grid,
   .pz-form-2 {
     grid-template-columns: 1fr;
   }

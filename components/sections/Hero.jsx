@@ -103,19 +103,19 @@ export default function Hero() {
             </p>
           </div>
 
-          <div ref={imgWrapRef} style={{ position: "relative", minHeight: 520, alignSelf: "stretch" }}>
-            <div style={{ position: "absolute", inset: 0, borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-subtle)", boxShadow: "var(--shadow-xl)" }}>
-              <img ref={imgRef} src="/assets/dr-cassio-hero.jpg" alt="Dr. Cássio Bermudes" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background:
-                    "linear-gradient(90deg, #010812 0%, rgba(1,8,18,0.5) 15%, transparent 38%), linear-gradient(180deg, transparent 55%, rgba(1,8,18,0.85) 100%)",
-                  pointerEvents: "none",
-                }}
-              />
-            </div>
+          <div
+            ref={imgWrapRef}
+            style={{ position: "relative", minHeight: 560, alignSelf: "stretch", borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-subtle)", boxShadow: "var(--shadow-xl)", background: "#04160e" }}
+          >
+            <img ref={imgRef} src="/assets/dr-cassio-hero.jpg" alt="Dr. Cássio Bermudes" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center" }} />
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                pointerEvents: "none",
+                background: "linear-gradient(90deg, #03140f 0%, rgba(3,20,15,0) 24%), linear-gradient(270deg, #023022 0%, rgba(2,48,34,0) 24%)",
+              }}
+            />
           </div>
         </div>
 
