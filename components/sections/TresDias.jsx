@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { SectionLabel } from "@/components/ui";
+import imersaoImg from "@/public/assets/imersao-real.jpg";
 import { useReveal } from "@/lib/scrollReveal";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { hSans, grad } from "@/lib/site";
@@ -65,7 +67,15 @@ export default function TresDias() {
           </div>
           <div ref={mediaRef}>
             <div style={{ borderRadius: 24, overflow: "hidden", position: "relative", border: "1px solid var(--border-subtle)", minHeight: 300, height: "100%" }}>
-              <img ref={img1Ref} src="/assets/imersao-real.jpg" alt="Imersão prática — Dr. Cássio conduzindo o exame ao lado do aluno" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <div ref={img1Ref} style={{ position: "absolute", inset: 0 }}>
+                <Image
+                  src={imersaoImg}
+                  alt="Imersão prática — Dr. Cássio conduzindo o exame ao lado do aluno"
+                  fill
+                  sizes="(max-width: 960px) 100vw, 42vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 55%, rgba(1,8,18,0.55))", pointerEvents: "none" }} />
               <span style={{ position: "absolute", left: 20, bottom: 16, color: "#fff", fontSize: 13, fontWeight: 600, background: "rgba(1,8,18,0.5)", backdropFilter: "blur(6px)", padding: "6px 12px", borderRadius: 999, border: "1px solid var(--border-subtle)" }}>
                 Treinamento prático em pacientes reais com acompanhamento individual

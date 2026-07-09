@@ -1,10 +1,12 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import GlowCTA from "@/components/GlowCTA";
 import { Button } from "@/components/ui";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 import { WA_LINK, scrollToId, hSans, grad } from "@/lib/site";
+import heroImg from "@/public/assets/dr-cassio-hero.jpg";
 
 const CHIPS = ["3 dias de prática", "Pacientes reais", "1 aluno por aparelho", "Supervisão direta"];
 const STATS = [
@@ -37,13 +39,10 @@ export default function Hero() {
         .from(subRef.current, { y: 16, opacity: 0, duration: 0.6 }, "-=0.5")
         .from(ctaRef.current.children, { y: 14, opacity: 0, duration: 0.55, stagger: 0.08 }, "-=0.35")
         .from(microRef.current, { opacity: 0, duration: 0.5 }, "-=0.25")
-        .fromTo(
-          imgRef.current,
-          { clipPath: "inset(0 0 100% 0)", scale: 1.12 },
-          { clipPath: "inset(0 0 0% 0)", scale: 1, duration: 1.1 },
-          "-=1.1"
-        )
-        .from(statsRef.current.querySelectorAll(".stat-cell"), { y: 20, opacity: 0, duration: 0.6, stagger: 0.07 }, "-=0.4");
+        .from(statsRef.current.querySelectorAll(".stat-cell"), { y: 20, opacity: 0, duration: 0.6, stagger: 0.07 }, "-=0.4")
+        // Reveal the hero image early (absolute t=0.15) with a quick fade so it
+        // doesn't gate LCP, while still animating in.
+        .fromTo(imgRef.current, { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.9 }, 0.15);
 
       return () => split.revert();
     },
@@ -107,7 +106,16 @@ export default function Hero() {
             ref={imgWrapRef}
             style={{ position: "relative", minHeight: 560, alignSelf: "stretch", borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-subtle)", boxShadow: "var(--shadow-xl)", background: "#04160e" }}
           >
-            <img ref={imgRef} src="/assets/dr-cassio-hero.jpg" alt="Dr. Cássio Bermudes" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center" }} />
+            <div ref={imgRef} style={{ position: "absolute", inset: 0 }}>
+              <Image
+                src={heroImg}
+                alt="Dr. Cássio Bermudes"
+                fill
+                priority
+                sizes="(max-width: 960px) 100vw, 46vw"
+                style={{ objectFit: "cover", objectPosition: "center center" }}
+              />
+            </div>
             <div
               style={{
                 position: "absolute",

@@ -25,7 +25,7 @@ export default function Footer() {
           <GradientRule height={3} />
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 26, flexWrap: "wrap", gap: 20 }}>
-          <img src="/assets/logo-lockup-dark.png" alt="Protocolo Zilca" style={{ height: 32 }} />
+          <img src="/assets/logo-lockup-dark.png" alt="Protocolo Zilca" width={66} height={32} loading="lazy" decoding="async" style={{ height: 32, width: "auto" }} />
           <span style={{ color: "var(--text-muted)", fontSize: 13 }}>© 2026 Protocolo Zilca · Formação em Ultrassonografia Vascular</span>
         </div>
         <p style={{ color: "var(--text-secondary)", fontSize: 13, lineHeight: 1.6, margin: "24px 0 8px", maxWidth: 820 }}>

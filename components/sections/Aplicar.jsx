@@ -36,7 +36,7 @@ export default function Aplicar() {
           className="gsap-reveal pz-aplicar-panel"
           style={{ position: "relative", overflow: "hidden", borderRadius: 24, backgroundImage: "var(--pz-gradient-deep)", border: "1px solid rgba(15,191,181,0.35)", boxShadow: "var(--glow-teal), var(--shadow-xl)" }}
         >
-          <img className="pz-aplicar-shield" src="/assets/logo-shield-dark.png" alt="" aria-hidden="true" style={{ position: "absolute", right: -50, top: -40, height: 340, opacity: 0.12, pointerEvents: "none" }} />
+          <img className="pz-aplicar-shield" src="/assets/logo-shield-dark.png" alt="" aria-hidden="true" width={537} height={340} loading="lazy" decoding="async" style={{ position: "absolute", right: -50, top: -40, height: 340, width: "auto", opacity: 0.12, pointerEvents: "none" }} />
           <div className="pz-aplicar-scrim" />
           <div className="pz-aplicar" style={{ position: "relative" }}>
             <div>

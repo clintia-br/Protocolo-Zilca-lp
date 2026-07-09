@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { SectionLabel } from "@/components/ui";
+import mentorImg from "@/public/assets/dr-cassio.jpg";
 import { useReveal } from "@/lib/scrollReveal";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useParallax } from "@/lib/animations";
@@ -53,12 +55,15 @@ export default function Mentor() {
       <div className="pz-wrap" style={{ position: "relative" }}>
         <div className="pz-mentor">
           <div style={{ position: "relative", alignSelf: "stretch", overflow: "hidden", borderTopLeftRadius: 24, borderBottomLeftRadius: 24, minHeight: 440 }}>
-            <img
-              ref={imgRef}
-              src="/assets/dr-cassio.jpg"
-              alt="Dr. Cássio Bermudes"
-              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", pointerEvents: "none" }}
-            />
+            <div ref={imgRef} style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
+              <Image
+                src={mentorImg}
+                alt="Dr. Cássio Bermudes"
+                fill
+                sizes="(max-width: 960px) 100vw, 42vw"
+                style={{ objectFit: "cover", objectPosition: "center top" }}
+              />
+            </div>
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, transparent 68%, var(--surface-raised))", borderBottomLeftRadius: 24, pointerEvents: "none" }} />
           </div>
           <div ref={textRef} className="gsap-reveal pz-mentor-text" style={{ display: "flex", flexDirection: "column", justifyContent: "center", minHeight: 440 }}>

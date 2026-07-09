@@ -50,7 +50,7 @@ export default function TopBar() {
       }}
     >
       <div className="pz-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: 12, paddingBottom: 12 }}>
-        <img src="/assets/logo-lockup-dark.png" alt="Protocolo Zilca" style={{ height: 36 }} />
+        <img src="/assets/logo-lockup-dark.png" alt="Protocolo Zilca" width={74} height={36} decoding="async" style={{ height: 36, width: "auto" }} />
         <nav className="pz-nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
           {ITEMS.map(([t, id]) => (
             <a key={id} href={`#${id}`} onClick={scrollToId(id)} style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>
