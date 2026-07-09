@@ -1,98 +1,84 @@
 "use client";
 
 import { useRef } from "react";
-import { Card, SectionLabel } from "@/components/ui";
-import { useReveal, useStaggerReveal } from "@/lib/scrollReveal";
+import { SectionLabel } from "@/components/ui";
+import { useReveal } from "@/lib/scrollReveal";
 import { gsap, useGSAP } from "@/lib/gsap";
-import { wrap } from "@/lib/site";
+import { hSans, grad } from "@/lib/site";
 
-const DIAS = [
-  ["Sexta", "à tarde", "Aquecimento prático e primeiros casos com o transdutor na mão."],
-  ["Sábado", "dia inteiro", "Imersão total em pacientes reais selecionados, do rastreio ao caso grave."],
-  ["Domingo", "de manhã", "Consolidação, medição por velocidade e fechamento de laudo."],
+const NUMS = [
+  ["4", "aparelhos rodando"],
+  ["1", "aluno por aparelho"],
+  ["0", "simulação"],
 ];
 
-function MediaFrame({ src, alt, height, imgRef }) {
-  return (
-    <div style={{ height, borderRadius: "var(--radius-lg)", overflow: "hidden", position: "relative", border: "1px solid var(--border-subtle)" }}>
-      <img
-        ref={imgRef}
-        src={src}
-        alt={alt}
-        style={{ width: "100%", height: "100%", objectFit: "cover", clipPath: "inset(0 0 100% 0)", transform: "scale(1.12)" }}
-      />
-    </div>
-  );
-}
-
 export default function TresDias() {
-  const headerRef = useRef(null);
-  const cardsRef = useRef(null);
-  const mediaWrapRef = useRef(null);
+  const textRef = useRef(null);
+  const mediaRef = useRef(null);
   const img1Ref = useRef(null);
   const img2Ref = useRef(null);
 
-  useReveal(headerRef);
-  useStaggerReveal(cardsRef, ".gsap-reveal");
+  useReveal(textRef);
 
   useGSAP(
     () => {
       [img1Ref, img2Ref].forEach((r, i) => {
         if (!r.current) return;
-        gsap.to(r.current, {
-          clipPath: "inset(0 0 0% 0)",
-          scale: 1,
-          duration: 1.2,
-          delay: i * 0.15,
-          ease: "pzOut",
-          scrollTrigger: { trigger: mediaWrapRef.current, start: "top 82%", once: true },
-        });
+        gsap.fromTo(
+          r.current,
+          { clipPath: "inset(0 0 100% 0)", scale: 1.1 },
+          {
+            clipPath: "inset(0 0 0% 0)",
+            scale: 1,
+            duration: 1.1,
+            delay: i * 0.15,
+            ease: "pzOut",
+            scrollTrigger: { trigger: mediaRef.current, start: "top 82%", once: true },
+          }
+        );
       });
     },
-    { scope: mediaWrapRef }
+    { scope: mediaRef }
   );
 
   return (
-    <section style={{ padding: "40px 0 96px", position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "var(--pz-glow)", opacity: 0.6, pointerEvents: "none" }} />
-      <div className="pz-wrap" style={{ ...wrap, position: "relative" }}>
-        <div ref={headerRef} className="gsap-reveal" style={{ maxWidth: 820, marginBottom: 40 }}>
-          <SectionLabel>Como são os três dias</SectionLabel>
-          <h2
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontWeight: 700,
-              fontSize: "clamp(26px, 3.6vw, 40px)",
-              margin: "16px 0 18px",
-              color: "#fff",
-              letterSpacing: "var(--tracking-tight)",
-              lineHeight: 1.12,
-            }}
+    <section style={{ padding: "56px 0 40px" }}>
+      <div className="pz-wrap">
+        <div className="pz-tresdias">
+          <div
+            ref={textRef}
+            className="gsap-reveal"
+            style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top)", padding: "48px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}
           >
-            Formato concentrado pra pesar o mínimo na sua agenda.
-          </h2>
-          <p style={{ color: "var(--text-secondary)", fontSize: 17, lineHeight: 1.65, margin: 0, maxWidth: 720 }}>
-            Um aluno por aparelho, até quatro aparelhos Philips top de linha rodando ao mesmo tempo. Pacientes reais e
-            selecionados, com patologia de verdade, nada de simulação. E o Dr. Cássio ali do lado, demonstrando,
-            corrigindo a mão, acompanhando caso a caso.
-          </p>
-        </div>
-
-        <div ref={cardsRef} className="pz-grid-3" style={{ marginBottom: 22 }}>
-          {DIAS.map(([d, sub, desc]) => (
-            <Card key={d} padding={28} className="gsap-reveal" style={{ height: "100%" }}>
-              <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 12 }}>
-                <span style={{ fontFamily: "var(--font-serif)", fontSize: 26, fontWeight: 700, color: "#fff" }}>{d}</span>
-                <span style={{ color: "var(--accent)", fontSize: 14, fontWeight: 600 }}>{sub}</span>
-              </div>
-              <p style={{ color: "var(--text-secondary)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>{desc}</p>
-            </Card>
-          ))}
-        </div>
-
-        <div ref={mediaWrapRef} className="pz-grid-tresdias">
-          <MediaFrame src="/assets/imersao-real.jpg" alt="Bastidores da imersão — aparelho e supervisão em tempo real" height={300} imgRef={img1Ref} />
-          <MediaFrame src="/assets/photo-ultrasound.jpg" alt="Doppler de carótida em paciente real" height={300} imgRef={img2Ref} />
+            <SectionLabel>Como são os três dias</SectionLabel>
+            <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.2vw, 32px)", margin: "16px 0 16px" }}>Formato concentrado, pra pesar o mínimo na sua agenda.</h2>
+            <p style={{ color: "var(--text-secondary)", fontSize: 16, lineHeight: 1.65, margin: "0 0 22px" }}>
+              Três dias inteiros de prática. Um aluno por aparelho, até quatro aparelhos Philips top de linha rodando ao
+              mesmo tempo. Pacientes reais e selecionados, com patologia de verdade — nada de simulação. E o Dr. Cássio
+              ali do lado, demonstrando, corrigindo a mão, acompanhando caso a caso.
+            </p>
+            <div style={{ display: "flex", gap: 22, flexWrap: "wrap" }}>
+              {NUMS.map(([v, l]) => (
+                <div key={l}>
+                  <div style={{ ...hSans, fontSize: 30, ...grad }}>{v}</div>
+                  <div style={{ color: "var(--text-muted)", fontSize: 13, marginTop: 2 }}>{l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div ref={mediaRef} className="pz-tresdias-media">
+            <div style={{ borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-subtle)", position: "relative", minHeight: 200 }}>
+              <img ref={img1Ref} src="/assets/photo-ultrasound.jpg" alt="Doppler de carótida em paciente real" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 55%, rgba(1,8,18,0.5))" }} />
+              <span style={{ position: "absolute", left: 20, bottom: 16, color: "#fff", fontSize: 13, fontWeight: 600, background: "rgba(1,8,18,0.5)", backdropFilter: "blur(6px)", padding: "6px 12px", borderRadius: 999, border: "1px solid var(--border-subtle)" }}>
+                Doppler de carótida · caso real
+              </span>
+            </div>
+            <div style={{ borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-subtle)", position: "relative", minHeight: 160 }}>
+              <img ref={img2Ref} src="/assets/imersao-real.jpg" alt="Bastidores da imersão — aluno operando o transdutor sob supervisão" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 60%, rgba(1,8,18,0.45))" }} />
+            </div>
+          </div>
         </div>
       </div>
     </section>
