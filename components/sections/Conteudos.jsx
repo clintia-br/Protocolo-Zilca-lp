@@ -6,10 +6,10 @@ import { useReveal, useStaggerReveal } from "@/lib/scrollReveal";
 import { hSans, grad } from "@/lib/site";
 
 const CARDS = [
-  { n: "01", chip: "Antes", t: "A teoria fica com você", b: ["Diretrizes de cardio, angio e radiologia", "Material curado na plataforma própria", "No seu tempo — o presencial não gasta um minuto com slide"] },
-  { n: "02", chip: "Uma semana antes", t: "A visão você treina nos casos", b: ["Banco de casos reais, laudo e imagem em alta", "Sessão ao vivo com o Dr. Cássio", "Olho acostumado às placas antes do transdutor"] },
-  { n: "03", chip: "3 dias", t: "A prática é o coração de tudo", b: ["Três dias intensivos, um aluno por aparelho", "Pacientes reais, incluindo casos graves", "Demonstração e supervisão de perto, o tempo todo"] },
-  { n: "04", chip: "Depois", t: "Você libera o próprio laudo", b: ["Gera a imagem e mede pela velocidade", "Crava o diagnóstico sem hesitar", "Segunda opinião de apoio nos primeiros meses"] },
+  { n: "01", t: "Preparação antes da imersão", b: ["Conteúdo baseado nas principais diretrizes da especialidade", "Plataforma própria com material de apoio", "O tempo presencial é dedicado à prática clínica"] },
+  { n: "02", t: "Discussão de casos", b: ["Banco de casos reais com imagens e laudos", "Sessão preparatória conduzida pelo Dr. Cássio", "Desenvolvimento da interpretação antes da prática"] },
+  { n: "03", t: "Prática supervisionada", b: ["Três dias de treinamento intensivo", "Um aluno por aparelho durante toda a imersão", "Pacientes reais e acompanhamento contínuo"] },
+  { n: "04", t: "Continuidade após o treinamento", b: ["Desenvolvimento da autonomia na realização do exame", "Segurança na elaboração dos laudos", "Suporte e segunda opinião conforme o nível de acompanhamento escolhido"] },
 ];
 
 export default function Conteudos() {
@@ -25,9 +25,9 @@ export default function Conteudos() {
       <div className="pz-wrap" style={{ position: "relative" }}>
         <div ref={headRef} className="gsap-reveal" style={{ textAlign: "center", maxWidth: 860, margin: "0 auto 48px" }}>
           <div style={{ height: 2, width: 120, backgroundImage: "var(--pz-gradient)", margin: "0 auto 20px" }} />
-          <SectionLabel>A virada</SectionLabel>
+          <SectionLabel>A metodologia</SectionLabel>
           <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.8vw, 38px)", marginTop: 16 }}>
-            O que faltou nunca foi teoria. Foi <span style={grad}>aparelho na mão</span>, em paciente real, com a orientação certa.
+            Uma metodologia construída para transformar conhecimento em <span style={grad}>experiência prática</span>.
           </h2>
         </div>
         <div ref={gridRef} className="pz-grid-4">

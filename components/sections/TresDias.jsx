@@ -7,9 +7,9 @@ import { gsap, useGSAP } from "@/lib/gsap";
 import { hSans, grad } from "@/lib/site";
 
 const NUMS = [
-  ["4", "aparelhos rodando"],
+  ["4", "aparelhos Philips disponíveis"],
   ["1", "aluno por aparelho"],
-  ["0", "simulação"],
+  ["100%", "pacientes reais na imersão"],
 ];
 
 export default function TresDias() {
@@ -46,12 +46,13 @@ export default function TresDias() {
             className="gsap-reveal"
             style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top)", padding: "clamp(28px, 6vw, 48px)", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}
           >
-            <SectionLabel>Como são os três dias</SectionLabel>
-            <h2 style={{ ...hSans, fontSize: "clamp(23px, 3.2vw, 32px)", margin: "16px 0 16px" }}>Formato concentrado, pra pesar o mínimo na sua agenda.</h2>
+            <SectionLabel>A experiência presencial</SectionLabel>
+            <h2 style={{ ...hSans, fontSize: "clamp(23px, 3.2vw, 32px)", margin: "16px 0 16px" }}>Três dias dedicados ao desenvolvimento da prática clínica.</h2>
             <p style={{ color: "var(--text-secondary)", fontSize: 16, lineHeight: 1.65, margin: "0 0 22px" }}>
-              Três dias inteiros de prática. Um aluno por aparelho, até quatro aparelhos Philips top de linha rodando ao
-              mesmo tempo. Pacientes reais e selecionados, com patologia de verdade — nada de simulação. E o Dr. Cássio
-              ali do lado, demonstrando, corrigindo a mão, acompanhando caso a caso.
+              A programação foi estruturada para aproveitar ao máximo o tempo presencial. Durante três dias, cada
+              participante realiza os exames em pacientes reais, com um aparelho exclusivo e supervisão contínua do Dr.
+              Cássio Bermudes. O foco está na execução da técnica, interpretação dos achados e construção da segurança
+              necessária para incorporar o exame à rotina clínica.
             </p>
             <div style={{ display: "flex", gap: 22, flexWrap: "wrap" }}>
               {NUMS.map(([v, l]) => (
@@ -67,7 +68,7 @@ export default function TresDias() {
               <img ref={img1Ref} src="/assets/imersao-real.jpg" alt="Imersão prática — Dr. Cássio conduzindo o exame ao lado do aluno" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 55%, rgba(1,8,18,0.55))", pointerEvents: "none" }} />
               <span style={{ position: "absolute", left: 20, bottom: 16, color: "#fff", fontSize: 13, fontWeight: 600, background: "rgba(1,8,18,0.5)", backdropFilter: "blur(6px)", padding: "6px 12px", borderRadius: 999, border: "1px solid var(--border-subtle)" }}>
-                Imersão em paciente real · eco + esteira + Doppler
+                Treinamento prático em pacientes reais com acompanhamento individual
               </span>
             </div>
           </div>

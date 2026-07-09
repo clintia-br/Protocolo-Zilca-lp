@@ -7,10 +7,10 @@ import { useReveal, useStaggerReveal } from "@/lib/scrollReveal";
 import { WA_LINK, hSans } from "@/lib/site";
 
 const FAQS = [
-  ["“Três dias fora do consultório? Não consigo me afastar.”", "O formato é concentrado de propósito. São três dias que passam a te devolver, semana após semana, um exame que hoje você terceiriza."],
-  ["“Eu já faço a carótida, dou um jeito.”", "O “jeitinho” é justamente o problema. Um laudo impreciso não fica isolado: ele enfraquece a percepção de todos os exames complexos que você assina. A imersão troca o “dou um jeito” por segurança de verdade."],
-  ["“E depois do curso, se eu travar num caso?”", "Você não fica sozinho. No nível Recomendado são 12 meses de revisão dos seus laudos e suporte de dúvidas com o próprio Dr. Cássio, apoio pros primeiros meses, que é quando a insegurança aparece."],
-  ["“É teórico ou é prático de verdade?”", "A teoria você estuda antes, na plataforma. O presencial é 100% mão na massa: paciente real, um aluno por aparelho, supervisão direta."],
+  ["Preciso me afastar do consultório durante três dias?", "Sim. O treinamento foi estruturado em formato concentrado para reduzir o impacto na agenda médica e permitir uma experiência prática contínua. A proposta é dedicar esse período exclusivamente ao desenvolvimento técnico."],
+  ["Já realizo Doppler de Carótidas. A imersão ainda faz sentido?", "Sim. Muitos participantes já executam o exame e procuram aperfeiçoar técnica, padronização, interpretação dos achados e segurança na elaboração dos laudos."],
+  ["Existe acompanhamento após o treinamento?", "Sim. Dependendo do nível escolhido, o participante conta com revisão de exames, esclarecimento de dúvidas e acompanhamento durante a incorporação do método à rotina clínica."],
+  ["O treinamento é realmente prático?", "Sim. O conteúdo teórico é disponibilizado previamente na plataforma. Durante o encontro presencial, o foco é a prática supervisionada em pacientes reais, discussão de casos e desenvolvimento técnico individual."],
 ];
 
 function FAQItem({ q, a, open, onClick }) {
@@ -64,7 +64,7 @@ export default function FAQ() {
       <div className="pz-wrap">
         <div ref={headRef} className="gsap-reveal" style={{ marginBottom: 40 }}>
           <SectionLabel>FAQ</SectionLabel>
-          <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 38px)", marginTop: 16 }}>Perguntas frequentes</h2>
+          <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 38px)", marginTop: 16 }}>Dúvidas frequentes sobre o treinamento.</h2>
         </div>
         <div className="pz-faq">
           <div ref={listRef} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -75,12 +75,12 @@ export default function FAQ() {
             ))}
           </div>
           <div ref={supportRef} className="gsap-reveal" style={{ borderRadius: 20, background: "var(--surface-card)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top)", padding: 34, position: "sticky", top: 90 }}>
-            <SectionLabel>Suporte</SectionLabel>
-            <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 22, lineHeight: 1.25, margin: "16px 0 10px", color: "#fff" }}>Ainda com dúvida? Fale com a equipe.</h3>
-            <p style={{ color: "var(--text-secondary)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 22px" }}>Resposta de médico para médico, direto no WhatsApp — sem robô, sem espera.</p>
+            <SectionLabel>Atendimento</SectionLabel>
+            <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 22, lineHeight: 1.25, margin: "16px 0 10px", color: "#fff" }}>Nossa equipe está disponível para esclarecer qualquer dúvida.</h3>
+            <p style={{ color: "var(--text-secondary)", fontSize: 14.5, lineHeight: 1.6, margin: "0 0 22px" }}>Se desejar mais informações sobre a metodologia, próximas turmas ou níveis de participação, fale diretamente com nossa equipe pelo WhatsApp.</p>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
               <Button variant="primary" size="md" style={{ width: "100%", borderRadius: 12 }}>
-                Quero falar no WhatsApp
+                Conversar com a equipe
               </Button>
             </a>
           </div>

@@ -26,12 +26,15 @@ export default function Footer() {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 26, flexWrap: "wrap", gap: 20 }}>
           <img src="/assets/logo-lockup-dark.png" alt="Protocolo Zilca" style={{ height: 32 }} />
-          <span style={{ color: "var(--text-muted)", fontSize: 13 }}>© 2026 Protocolo Zilca · Ultrassonografia Vascular</span>
+          <span style={{ color: "var(--text-muted)", fontSize: 13 }}>© 2026 Protocolo Zilca · Formação em Ultrassonografia Vascular</span>
         </div>
-        <p style={{ color: "var(--text-muted)", fontSize: 12, lineHeight: 1.6, margin: "24px 0 0", maxWidth: 760 }}>
-          Conteúdo educacional destinado a médicos. Comunicação em conformidade com o CFM: sem promessa de resultado ou
-          retorno financeiro, sem sensacionalismo. Imagens de exame e de pacientes com anonimato preservado. Depoimentos
-          apenas reais e autorizados.
+        <p style={{ color: "var(--text-secondary)", fontSize: 13, lineHeight: 1.6, margin: "24px 0 8px", maxWidth: 820 }}>
+          Programa educacional destinado exclusivamente a médicos.
+        </p>
+        <p style={{ color: "var(--text-muted)", fontSize: 12, lineHeight: 1.6, margin: 0, maxWidth: 820 }}>
+          O conteúdo desta página segue as diretrizes do Conselho Federal de Medicina, com finalidade educacional e
+          informativa. Imagens clínicas preservam o anonimato dos pacientes. Depoimentos publicados são reais e
+          utilizados mediante autorização dos participantes.
         </p>
       </div>
     </footer>

@@ -5,10 +5,10 @@ import { useReveal, useStaggerReveal } from "@/lib/scrollReveal";
 import { hSans, grad } from "@/lib/site";
 
 const CARDS = [
-  ["Domina o eco, trava na carótida", "Você libera o eco de olhos fechados. Na carótida, dá um jeito, segura o laudo ou manda pra fora."],
-  ["Manda receita pra fora todo mês", "Um exame que já bate na sua porta junto do eco escapa do consultório por falta de prática guiada."],
-  ["Fecha diagnóstico sem segurança", "Aprendeu a teoria, mas prática real, em caso difícil, teve quase nenhuma. Falta cravar o diagnóstico sem hesitar."],
-  ["Quer fechar o ciclo no consultório", "Eco + esteira + carótida dentro da própria clínica, liberando o próprio laudo com segurança."],
+  ["Você já atua com ecocardiografia", "Busca ampliar sua atuação clínica incorporando o Doppler de Carótidas com maior domínio técnico e confiança na execução do exame."],
+  ["Deseja ampliar sua prática assistencial", "Incorporar um exame frequentemente solicitado na rotina cardiovascular e realizá-lo dentro da própria clínica com segurança."],
+  ["Valoriza treinamento prático", "Já estudou a teoria, mas procura uma experiência presencial que permita desenvolver habilidade prática ao lado de um profissional experiente."],
+  ["Busca evolução profissional", "Quer consolidar uma formação que integre ecocardiografia, teste ergométrico e Doppler de Carótidas na mesma rotina clínica."],
 ];
 
 export default function ParaQuem() {
@@ -22,7 +22,7 @@ export default function ParaQuem() {
     <section id="para-quem" style={{ padding: "clamp(56px, 9vw, 96px) 0 40px" }}>
       <div className="pz-wrap">
         <div ref={headRef} className="gsap-reveal" style={{ marginBottom: 44 }}>
-          <h2 style={{ ...hSans, fontSize: "clamp(26px, 4vw, 40px)" }}>Para quem é essa imersão?</h2>
+          <h2 style={{ ...hSans, fontSize: "clamp(26px, 4vw, 40px)" }}>Para quem é esta imersão?</h2>
         </div>
         <div style={{ height: 1, background: "var(--border-subtle)", marginBottom: 40 }} />
         <div ref={gridRef} className="pz-grid-4">

@@ -43,8 +43,8 @@ export default function StickyBar() {
         }}
       >
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ color: "#fff", fontSize: 15.5, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>Próxima turma da imersão de Doppler de carótidas</div>
-          <div style={{ color: "var(--text-muted)", fontSize: 13 }}>Turmas de até 4 médicos · vaga por aparelho</div>
+          <div style={{ color: "#fff", fontSize: 15.5, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>Próximas turmas do Programa de Treinamento em Doppler de Carótidas</div>
+          <div style={{ color: "var(--text-muted)", fontSize: 13 }}>Turmas reduzidas · Um participante por aparelho · Formação presencial</div>
         </div>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
           <Button variant="primary" size="md" style={{ borderRadius: 10, whiteSpace: "nowrap" }}>

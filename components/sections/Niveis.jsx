@@ -9,20 +9,20 @@ const NIVEIS = [
   {
     nome: "Essencial",
     destaque: false,
-    tagline: "O núcleo da experiência: dominar a técnica na prática.",
-    itens: ["Imersão prática de 3 dias, um aluno por aparelho", "Acesso à plataforma (teoria + banco de casos)", "Revisão de laudo e suporte no período inicial"],
+    tagline: "A experiência completa de formação prática para desenvolver domínio técnico no Doppler de Carótidas.",
+    itens: ["Imersão presencial de três dias", "Um aluno por aparelho", "Plataforma com conteúdo teórico e casos clínicos", "Suporte inicial para revisão de exames"],
   },
   {
     nome: "Recomendado",
     destaque: true,
-    tagline: "Vencer a insegurança com apoio contínuo depois do curso.",
-    itens: ["Tudo do Essencial", "Revisão de laudo estendida por 1 ano", "Suporte de dúvidas por 12 meses", "Mentoria de implantação no consultório", "Encontro dedicado de revisão pós-curso"],
+    tagline: "Ideal para quem deseja manter acompanhamento próximo durante a implantação do exame na rotina clínica.",
+    itens: ["Todos os recursos do Essencial", "Revisão de laudos por 12 meses", "Suporte para dúvidas clínicas", "Mentoria de implantação", "Encontro de revisão após a imersão"],
   },
   {
     nome: "Referência",
     destaque: false,
-    tagline: "A experiência mais completa, exclusiva e individualizada.",
-    itens: ["Tudo do Recomendado", "Dia extra de prática dedicada", "Hospedagem e traslado do aeroporto inclusos", "Mentoria estendida e próxima com o Dr. Cássio"],
+    tagline: "A experiência mais completa, com acompanhamento individualizado e tempo adicional de prática.",
+    itens: ["Todos os benefícios do Recomendado", "Um dia extra de treinamento prático", "Hospedagem e traslado inclusos", "Mentoria estendida com o Dr. Cássio Bermudes"],
   },
 ];
 
@@ -38,7 +38,7 @@ export default function Niveis() {
       <div style={{ position: "absolute", inset: 0, backgroundImage: "var(--pz-glow)", opacity: 0.5, pointerEvents: "none" }} />
       <div className="pz-wrap" style={{ position: "relative" }}>
         <div ref={headRef} className="gsap-reveal" style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 48px" }}>
-          <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.8vw, 38px)" }}>Escolha o nível de acompanhamento que faz sentido pra você.</h2>
+          <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.8vw, 38px)" }}>Escolha o formato de acompanhamento mais adequado ao seu momento profissional.</h2>
         </div>
         <div ref={gridRef} className="pz-grid-3" style={{ alignItems: "stretch" }}>
           {NIVEIS.map((n) => (
@@ -75,7 +75,7 @@ export default function Niveis() {
                 </span>
                 {n.destaque && (
                   <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pz-ink)", background: "var(--accent-green)", padding: "5px 10px", borderRadius: 999 }}>
-                    Maioria
+                    Mais escolhido
                   </span>
                 )}
               </div>
@@ -104,8 +104,8 @@ export default function Niveis() {
           ))}
         </div>
         <p style={{ textAlign: "center", color: "var(--text-muted)", fontSize: 14, margin: "36px auto 0", maxWidth: 640 }}>
-          São até quatro médicos por turma, um por aparelho. Turma pequena enche rápido — aplicar cedo garante prioridade
-          na data que você quer.
+          As turmas são limitadas a quatro participantes, garantindo acompanhamento individual e disponibilidade
+          exclusiva de equipamento durante toda a experiência.
         </p>
       </div>
     </section>

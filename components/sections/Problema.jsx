@@ -6,9 +6,9 @@ import { useReveal } from "@/lib/scrollReveal";
 import { hSans, grad } from "@/lib/site";
 
 const CUSTOS = [
-  ["Na técnica", "A insegurança de liberar o laudo sem ter certeza de que não passou nada batido."],
-  ["No faturamento", "A receita que escapa do consultório todo mês, num exame que já bateu na sua porta junto do eco."],
-  ["Na reputação", "Um laudo vascular fraco derruba a confiança em tudo que você assina. Se o colega duvida da sua carótida, começa a duvidar do seu eco."],
+  ["Na execução do exame", "A experiência prática limitada pode gerar dúvidas durante a aquisição das imagens, medições e interpretação dos achados."],
+  ["Na rotina do consultório", "Exames acabam sendo encaminhados para outros serviços, mesmo quando fazem parte da demanda habitual da especialidade."],
+  ["Na confiança clínica", "Quanto maior o domínio técnico, maior a tranquilidade para conduzir o exame e emitir o laudo com consistência."],
 ];
 
 function CustoCard({ t, d }) {
@@ -82,12 +82,18 @@ export default function Problema() {
           className="gsap-reveal"
           style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top), var(--shadow-lg)", padding: "clamp(28px, 6vw, 52px)" }}
         >
-          <div style={{ maxWidth: 780 }}>
-            <SectionLabel>O problema</SectionLabel>
-            <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.4vw, 34px)", margin: "16px 0 18px" }}>Você domina o coração. Na carótida, trava.</h2>
+          <div style={{ maxWidth: 820 }}>
+            <SectionLabel>A importância da prática</SectionLabel>
+            <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.4vw, 34px)", margin: "16px 0 18px" }}>
+              A formação teórica é fundamental. A prática supervisionada completa esse processo.
+            </h2>
+            <p style={{ color: "var(--text-secondary)", fontSize: 16.5, lineHeight: 1.7, margin: "0 0 14px" }}>
+              Muitos médicos concluem sua formação em ecocardiografia com pouca exposição prática ao Doppler de
+              Carótidas. Isso faz com que a curva de aprendizado aconteça já na rotina clínica, onde cada exame exige
+              confiança técnica, interpretação criteriosa e segurança na elaboração do laudo.
+            </p>
             <p style={{ color: "var(--text-secondary)", fontSize: 16.5, lineHeight: 1.7, margin: 0 }}>
-              Você dá um jeito, segura o laudo mais tempo do que gostaria, ou libera sem ter segurança. Aprendeu a
-              teoria, mas a prática real, guiada, teve quase nenhuma. Esse &quot;jeito&quot; sai caro em três frentes:
+              Essa realidade costuma impactar três aspectos importantes da prática médica.
             </p>
           </div>
           <div className="pz-grid-3" style={{ margin: "36px 0 28px" }}>
@@ -95,8 +101,9 @@ export default function Problema() {
               <CustoCard key={t} t={t} d={d} />
             ))}
           </div>
-          <p style={{ ...hSans, fontSize: "clamp(19px, 2.4vw, 22px)", maxWidth: 640 }}>
-            Nada disso é falta de capacidade. <span style={grad}>É falta de prática do jeito certo.</span>
+          <p style={{ ...hSans, fontSize: "clamp(19px, 2.4vw, 22px)", maxWidth: 720 }}>
+            A evolução acontece quando <span style={grad}>conhecimento e prática caminham juntos</span>, em um ambiente
+            supervisionado e voltado para a realidade clínica.
           </p>
         </div>
       </div>

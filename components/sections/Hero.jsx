@@ -6,12 +6,12 @@ import { Button } from "@/components/ui";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 import { WA_LINK, scrollToId, hSans, grad } from "@/lib/site";
 
-const CHIPS = ["3 dias inteiros de prática", "Presencial · paciente real", "1 aluno por aparelho"];
+const CHIPS = ["3 dias de prática", "Pacientes reais", "1 aluno por aparelho", "Supervisão direta"];
 const STATS = [
-  ["+20 mil", "exames na prática"],
-  ["20 anos", "de rotina clínica"],
-  ["Philips", "Aparelhos modernos"],
-  ["1", "um aluno por aparelho"],
+  ["+20 mil", "exames realizados"],
+  ["20 anos", "de experiência clínica"],
+  ["Philips", "equipamentos de alta performance"],
+  ["1", "aluno por aparelho"],
 ];
 
 export default function Hero() {
@@ -68,7 +68,7 @@ export default function Hero() {
                 color: "var(--text-secondary)",
               }}
             >
-              Imersão prática · Doppler de carótidas · 3 dias em paciente real
+              Imersão prática · Doppler de carótidas · Treinamento presencial
             </span>
           </div>
           <div ref={chipsRef} style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
@@ -83,12 +83,12 @@ export default function Hero() {
         <div className="pz-hero-grid">
           <div>
             <h1 ref={h1Ref} style={{ ...hSans, fontSize: "clamp(27px, 4.4vw, 42px)", lineHeight: 1.18, textWrap: "balance", maxWidth: 600 }}>
-              Em 3 dias, saia do &quot;eu me viro no Doppler de Carótidas&quot; e passe a fazer o exame{" "}
-              <span style={grad}>com a mesma segurança que você já tem no eco.</span>
+              Desenvolva segurança para incorporar o <span style={grad}>Doppler de Carótidas</span> à sua rotina clínica em uma imersão prática de três dias.
             </h1>
             <p style={{ color: "var(--text-secondary)", fontSize: 17.5, lineHeight: 1.7, maxWidth: 540, margin: "28px 0 34px" }} ref={subRef}>
-              Prática intensiva em paciente real, um aluno por aparelho, ao lado de quem já fez mais de 20 mil exames.
-              Sem teoria enrolada. Sem sala lotada. Aparelho na mão para uma prática guiada por quem tem experiência.
+              Um treinamento presencial desenvolvido para médicos que desejam aprimorar sua prática em Doppler de
+              Carótidas. Três dias de atividades supervisionadas, pacientes reais, um aluno por aparelho e
+              acompanhamento próximo do Dr. Cássio Bermudes durante toda a imersão.
             </p>
             <div ref={ctaRef} style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
               <GlowCTA href={WA_LINK}>Quero me inscrever na próxima turma</GlowCTA>
@@ -99,7 +99,7 @@ export default function Hero() {
               </a>
             </div>
             <p ref={microRef} style={{ color: "var(--text-muted)", fontSize: 13.5, margin: "18px 0 0" }}>
-              Turmas de até 4 médicos. Vaga sujeita à disponibilidade de aparelho.
+              Turmas com até quatro médicos para garantir acompanhamento individual durante toda a prática.
             </p>
           </div>
 

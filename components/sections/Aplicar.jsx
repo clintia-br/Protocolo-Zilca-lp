@@ -6,7 +6,7 @@ import { useReveal } from "@/lib/scrollReveal";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { WA_LINK, hSans } from "@/lib/site";
 
-const OPCOES = ["Não faço", "Faço com insegurança", "Faço, quero aprimorar"];
+const OPCOES = ["Ainda não", "Sim, mas quero ganhar mais segurança", "Sim, busco aperfeiçoamento"];
 const fieldStyle = { background: "rgba(1,8,18,0.4)", borderColor: "rgba(255,255,255,0.35)" };
 
 export default function Aplicar() {
@@ -40,14 +40,15 @@ export default function Aplicar() {
           <div className="pz-aplicar-scrim" />
           <div className="pz-aplicar" style={{ position: "relative" }}>
             <div>
-              <SectionLabel>Inscrição</SectionLabel>
-              <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.8vw, 38px)", margin: "16px 0 16px" }}>Você já faz eco com segurança. Falta pouco pra fazer a carótida igual.</h2>
+              <SectionLabel>Inscrições</SectionLabel>
+              <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.8vw, 38px)", margin: "16px 0 16px" }}>Faça parte da próxima turma do Programa de Treinamento em Doppler de Carótidas.</h2>
               <p style={{ color: "rgba(255,255,255,0.86)", fontSize: 16.5, lineHeight: 1.6, margin: "0 0 24px" }}>
-                Três dias de prática real fecham esse ciclo. Deixe seus dados e nossa equipe volta com as datas
-                disponíveis e o próximo passo.
+                Preencha seus dados para receber as próximas datas disponíveis, informações sobre as modalidades de
+                participação e orientações para inscrição. Nossa equipe entrará em contato para apresentar todos os
+                detalhes do programa.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, color: "rgba(255,255,255,0.82)", fontSize: 14.5 }}>
-                {["Turmas de até 4 médicos, um por aparelho", "Comunicação de médico para médico", "Sem compromisso — a equipe retorna com as datas"].map((t) => (
+                {["Turmas limitadas a quatro médicos", "Um participante por equipamento", "Comunicação direta com nossa equipe"].map((t) => (
                   <div key={t} style={{ display: "flex", gap: 10, alignItems: "center" }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent-green)" }} />
                     {t}
@@ -62,13 +63,14 @@ export default function Aplicar() {
                   <div className="success-check" style={{ width: 56, height: 56, borderRadius: "50%", backgroundImage: "var(--pz-gradient)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 28, fontWeight: 700, marginBottom: 18 }}>
                     ✓
                   </div>
-                  <h3 className="success-fade" style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 24, color: "#fff", margin: "0 0 10px" }}>Inscrição recebida</h3>
+                  <h3 className="success-fade" style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 24, color: "#fff", margin: "0 0 10px" }}>Recebemos sua solicitação.</h3>
                   <p className="success-fade" style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, lineHeight: 1.6, margin: "0 0 22px" }}>
-                    Nossa equipe entra em contato com as próximas datas. Se preferir, fale agora pelo WhatsApp.
+                    Nossa equipe entrará em contato para apresentar as próximas datas disponíveis e esclarecer qualquer
+                    dúvida sobre o programa.
                   </p>
                   <a className="success-fade" href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "inline-block" }}>
                     <Button variant="primary" size="md" style={{ borderRadius: 12 }}>
-                      Falar no WhatsApp
+                      Conversar pelo WhatsApp
                     </Button>
                   </a>
                 </div>
@@ -84,7 +86,7 @@ export default function Aplicar() {
                     <Input label="E-mail" name="email" type="email" placeholder="voce@clinica.com.br" required style={fieldStyle} />
                   </div>
                   <div>
-                    <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.82)", marginBottom: 10 }}>Você já realiza Doppler de carótida hoje?</label>
+                    <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.82)", marginBottom: 10 }}>Você já realiza Doppler de Carótidas?</label>
                     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                       {OPCOES.map((o) => (
                         <label
@@ -109,9 +111,9 @@ export default function Aplicar() {
                     </div>
                   </div>
                   <Button type="submit" variant="primary" size="lg" style={{ width: "100%", borderRadius: 12, marginTop: 4 }}>
-                    Enviar minha inscrição
+                    Solicitar informações
                   </Button>
-                  <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 12.5, textAlign: "center", margin: 0 }}>Seus dados são usados apenas para contato sobre a imersão.</p>
+                  <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 12.5, textAlign: "center", margin: 0 }}>Os dados informados serão utilizados exclusivamente para contato relacionado às próximas turmas da formação.</p>
                 </form>
               )}
             </div>

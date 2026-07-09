@@ -1,6 +1,6 @@
 "use client";
 
-const WORDS = ["Doppler", "Carótidas", "Vascular", "Paciente real", "Prática guiada", "Laudo com segurança"];
+const WORDS = ["Doppler de Carótidas", "Ultrassonografia Vascular", "Pacientes reais", "Prática supervisionada", "Segurança diagnóstica", "Formação médica"];
 
 export default function Marquee() {
   const row = [...WORDS, ...WORDS];

@@ -57,27 +57,29 @@ export default function Mentor() {
               ref={imgRef}
               src="/assets/dr-cassio.jpg"
               alt="Dr. Cássio Bermudes"
-              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", pointerEvents: "none" }}
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", pointerEvents: "none" }}
             />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, transparent 68%, var(--surface-raised))", borderBottomLeftRadius: 24, pointerEvents: "none" }} />
           </div>
           <div ref={textRef} className="gsap-reveal pz-mentor-text" style={{ display: "flex", flexDirection: "column", justifyContent: "center", minHeight: 440 }}>
-            <SectionLabel>Quem ensina</SectionLabel>
+            <SectionLabel>Mentoria</SectionLabel>
             <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 40px)", margin: "14px 0 6px" }}>Dr. Cássio Bermudes</h2>
-            <p style={{ color: "var(--accent)", fontSize: 15, fontWeight: 600, margin: "0 0 22px" }}>+20 mil exames · quase 2 décadas de rotina clínica</p>
+            <p style={{ color: "var(--accent)", fontSize: 15, fontWeight: 600, margin: "0 0 22px" }}>Mais de 20 mil exames realizados · Duas décadas dedicadas à prática clínica</p>
             <p style={{ color: "var(--text-secondary)", fontSize: 15.5, lineHeight: 1.65, margin: "0 0 16px" }}>
-              O Dr. Cássio contrata médicos pra fazer exames na própria clínica há anos e viu o mesmo padrão se repetir:
-              o cardiologista se forma dominando o eco e sai com quase nenhuma prática em carótida. Resolveu ensinar do
-              jeito que gostaria de ter aprendido.
+              Ao longo da carreira, o Dr. Cássio Bermudes acompanhou de perto a formação de médicos que dominavam a
+              ecocardiografia, mas encontravam poucas oportunidades para desenvolver experiência prática em Doppler de
+              Carótidas. Essa realidade motivou a criação de uma metodologia voltada para a formação técnica baseada na
+              prática supervisionada.
             </p>
             <p style={{ color: "var(--text-secondary)", fontSize: 15.5, lineHeight: 1.65, margin: "0 0 26px" }}>
-              Em vez de repetir o modelo teórico de sempre, montou um formato que respeita como um médico de fato
-              aprende: teoria por conta, olho treinado nos casos, prática intensiva com aparelho na mão.
+              A proposta da imersão é aproximar o treinamento da rotina clínica. O conteúdo teórico é disponibilizado
+              previamente, permitindo que o período presencial seja integralmente dedicado à execução dos exames,
+              discussão dos casos e desenvolvimento da tomada de decisão ao lado do mentor.
             </p>
             <div style={{ borderLeft: "3px solid transparent", borderImage: "var(--pz-gradient) 1", paddingLeft: 22 }}>
               <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 20, lineHeight: 1.45, color: "#fff", margin: 0 }}>
-                “Não é mais um curso teórico. É a prática que eu queria ter tido quando comecei: paciente real, caso
-                difícil de verdade, e alguém do lado que já fez isso mais de 20 mil vezes.”
+                “A prática supervisionada encurta a curva de aprendizado e proporciona ao médico a confiança necessária
+                para incorporar o Doppler de Carótidas à sua rotina clínica com segurança e consistência.”
               </p>
             </div>
           </div>
