@@ -27,7 +27,7 @@ export default function Mentor() {
   );
 
   return (
-    <section id="mentor" style={{ padding: "80px 0 40px", position: "relative", overflow: "hidden" }}>
+    <section id="mentor" style={{ padding: "clamp(48px, 8vw, 80px) 0 40px", position: "relative", overflow: "hidden" }}>
       <div
         ref={watermarkRef}
         aria-hidden="true"
@@ -61,9 +61,9 @@ export default function Mentor() {
             />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, transparent 68%, var(--surface-raised))", borderBottomLeftRadius: 24, pointerEvents: "none" }} />
           </div>
-          <div ref={textRef} className="gsap-reveal" style={{ padding: "56px 56px 56px 40px", display: "flex", flexDirection: "column", justifyContent: "center", minHeight: 440 }}>
+          <div ref={textRef} className="gsap-reveal pz-mentor-text" style={{ display: "flex", flexDirection: "column", justifyContent: "center", minHeight: 440 }}>
             <SectionLabel>Quem ensina</SectionLabel>
-            <h2 style={{ ...hSans, fontSize: "clamp(28px, 3.8vw, 40px)", margin: "14px 0 6px" }}>Dr. Cássio Bermudes</h2>
+            <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 40px)", margin: "14px 0 6px" }}>Dr. Cássio Bermudes</h2>
             <p style={{ color: "var(--accent)", fontSize: 15, fontWeight: 600, margin: "0 0 22px" }}>+20 mil exames · quase 2 décadas de rotina clínica</p>
             <p style={{ color: "var(--text-secondary)", fontSize: 15.5, lineHeight: 1.65, margin: "0 0 16px" }}>
               O Dr. Cássio contrata médicos pra fazer exames na própria clínica há anos e viu o mesmo padrão se repetir:

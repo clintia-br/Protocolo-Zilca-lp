@@ -82,7 +82,7 @@ export default function Hero() {
 
         <div className="pz-hero-grid">
           <div>
-            <h1 ref={h1Ref} style={{ ...hSans, fontSize: "clamp(30px, 4.4vw, 42px)", lineHeight: 1.18, textWrap: "balance", maxWidth: 600 }}>
+            <h1 ref={h1Ref} style={{ ...hSans, fontSize: "clamp(27px, 4.4vw, 42px)", lineHeight: 1.18, textWrap: "balance", maxWidth: 600 }}>
               Em 3 dias, saia do &quot;eu me viro no Doppler de Carótidas&quot; e passe a fazer o exame{" "}
               <span style={grad}>com a mesma segurança que você já tem no eco.</span>
             </h1>
@@ -127,9 +127,10 @@ export default function Hero() {
                   style={{
                     fontFamily: "var(--font-sans)",
                     fontWeight: 700,
-                    fontSize: 46,
+                    fontSize: "clamp(26px, 7vw, 46px)",
                     lineHeight: 1,
                     letterSpacing: "var(--tracking-tight)",
+                    whiteSpace: "nowrap",
                     ...(i === 0 ? grad : { color: "var(--text-primary)" }),
                   }}
                 >

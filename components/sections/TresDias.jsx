@@ -44,10 +44,10 @@ export default function TresDias() {
           <div
             ref={textRef}
             className="gsap-reveal"
-            style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top)", padding: "48px 48px", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}
+            style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top)", padding: "clamp(28px, 6vw, 48px)", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}
           >
             <SectionLabel>Como são os três dias</SectionLabel>
-            <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.2vw, 32px)", margin: "16px 0 16px" }}>Formato concentrado, pra pesar o mínimo na sua agenda.</h2>
+            <h2 style={{ ...hSans, fontSize: "clamp(23px, 3.2vw, 32px)", margin: "16px 0 16px" }}>Formato concentrado, pra pesar o mínimo na sua agenda.</h2>
             <p style={{ color: "var(--text-secondary)", fontSize: 16, lineHeight: 1.65, margin: "0 0 22px" }}>
               Três dias inteiros de prática. Um aluno por aparelho, até quatro aparelhos Philips top de linha rodando ao
               mesmo tempo. Pacientes reais e selecionados, com patologia de verdade — nada de simulação. E o Dr. Cássio

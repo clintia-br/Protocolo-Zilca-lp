@@ -20,13 +20,13 @@ export default function Conteudos() {
   useStaggerReveal(gridRef, ".gsap-reveal");
 
   return (
-    <section id="conteudos" style={{ padding: "88px 0 40px", position: "relative", overflow: "hidden" }}>
+    <section id="conteudos" style={{ padding: "clamp(52px, 8vw, 88px) 0 40px", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, backgroundImage: "var(--pz-glow)", opacity: 0.6, pointerEvents: "none" }} />
       <div className="pz-wrap" style={{ position: "relative" }}>
         <div ref={headRef} className="gsap-reveal" style={{ textAlign: "center", maxWidth: 860, margin: "0 auto 48px" }}>
           <div style={{ height: 2, width: 120, backgroundImage: "var(--pz-gradient)", margin: "0 auto 20px" }} />
           <SectionLabel>A virada</SectionLabel>
-          <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 38px)", marginTop: 16 }}>
+          <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.8vw, 38px)", marginTop: 16 }}>
             O que faltou nunca foi teoria. Foi <span style={grad}>aparelho na mão</span>, em paciente real, com a orientação certa.
           </h2>
         </div>

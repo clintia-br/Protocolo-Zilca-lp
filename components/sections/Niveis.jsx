@@ -38,7 +38,7 @@ export default function Niveis() {
       <div style={{ position: "absolute", inset: 0, backgroundImage: "var(--pz-glow)", opacity: 0.5, pointerEvents: "none" }} />
       <div className="pz-wrap" style={{ position: "relative" }}>
         <div ref={headRef} className="gsap-reveal" style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 48px" }}>
-          <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 38px)" }}>Escolha o nível de acompanhamento que faz sentido pra você.</h2>
+          <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.8vw, 38px)" }}>Escolha o nível de acompanhamento que faz sentido pra você.</h2>
         </div>
         <div ref={gridRef} className="pz-grid-3" style={{ alignItems: "stretch" }}>
           {NIVEIS.map((n) => (

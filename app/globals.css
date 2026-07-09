@@ -301,6 +301,18 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 13px;
 }
+.pz-mentor-text {
+  padding: 56px 56px 56px 40px;
+}
+.pz-aplicar-panel {
+  padding: 60px 52px;
+}
+.pz-aplicar-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: transparent;
+}
 
 @media (max-width: 960px) {
   .pz-hero-grid,
@@ -319,6 +331,11 @@ img {
   }
 }
 @media (max-width: 640px) {
+  /* Wide eyebrow tracking wraps ugly on narrow screens — tighten it globally.
+     Inline styles reference var(--tracking-label), so this cascades everywhere. */
+  :root {
+    --tracking-label: 0.16em;
+  }
   .pz-wrap {
     padding-left: 20px;
     padding-right: 20px;
@@ -335,6 +352,22 @@ img {
   }
   .pz-nav-links {
     display: none !important;
+  }
+  .pz-mentor-text {
+    padding: 32px 24px 36px;
+  }
+  .pz-aplicar-panel {
+    padding: 34px 22px;
+  }
+  /* Stacked on mobile the vivid panel washes out white text — darken behind it. */
+  .pz-aplicar-scrim {
+    background: rgba(1, 8, 18, 0.5);
+  }
+  .pz-aplicar-shield {
+    height: 190px !important;
+    opacity: 0.08 !important;
+    right: -28px !important;
+    top: -24px !important;
   }
 }
 

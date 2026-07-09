@@ -33,14 +33,15 @@ export default function Aplicar() {
       <div className="pz-wrap">
         <div
           ref={panelRef}
-          className="gsap-reveal"
-          style={{ position: "relative", overflow: "hidden", borderRadius: 24, backgroundImage: "var(--pz-gradient-deep)", padding: "60px 52px", border: "1px solid rgba(15,191,181,0.35)", boxShadow: "var(--glow-teal), var(--shadow-xl)" }}
+          className="gsap-reveal pz-aplicar-panel"
+          style={{ position: "relative", overflow: "hidden", borderRadius: 24, backgroundImage: "var(--pz-gradient-deep)", border: "1px solid rgba(15,191,181,0.35)", boxShadow: "var(--glow-teal), var(--shadow-xl)" }}
         >
-          <img src="/assets/logo-shield-dark.png" alt="" aria-hidden="true" style={{ position: "absolute", right: -50, top: -40, height: 340, opacity: 0.12, pointerEvents: "none" }} />
+          <img className="pz-aplicar-shield" src="/assets/logo-shield-dark.png" alt="" aria-hidden="true" style={{ position: "absolute", right: -50, top: -40, height: 340, opacity: 0.12, pointerEvents: "none" }} />
+          <div className="pz-aplicar-scrim" />
           <div className="pz-aplicar" style={{ position: "relative" }}>
             <div>
               <SectionLabel>Inscrição</SectionLabel>
-              <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.8vw, 38px)", margin: "16px 0 16px" }}>Você já faz eco com segurança. Falta pouco pra fazer a carótida igual.</h2>
+              <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.8vw, 38px)", margin: "16px 0 16px" }}>Você já faz eco com segurança. Falta pouco pra fazer a carótida igual.</h2>
               <p style={{ color: "rgba(255,255,255,0.86)", fontSize: 16.5, lineHeight: 1.6, margin: "0 0 24px" }}>
                 Três dias de prática real fecham esse ciclo. Deixe seus dados e nossa equipe volta com as datas
                 disponíveis e o próximo passo.

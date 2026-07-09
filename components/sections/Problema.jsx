@@ -12,18 +12,32 @@ const CUSTOS = [
 ];
 
 function CustoCard({ t, d }) {
-  const [h, setH] = useState(false);
+  // Toggle on click so it works on touch (hover doesn't exist on mobile);
+  // desktop also gets an open-on-hover affordance.
+  const [open, setOpen] = useState(false);
+  const [hover, setHover] = useState(false);
+  const shown = open || hover;
   return (
-    <div
-      onMouseEnter={() => setH(true)}
-      onMouseLeave={() => setH(false)}
+    <button
+      type="button"
+      onClick={() => setOpen((v) => !v)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      aria-expanded={shown}
       style={{
+        display: "block",
+        width: "100%",
+        textAlign: "left",
+        background: "none",
         borderTop: "2px solid transparent",
         borderImage: "var(--pz-gradient) 1",
+        borderLeft: 0,
+        borderRight: 0,
+        borderBottom: 0,
         paddingTop: 18,
-        cursor: "default",
+        cursor: "pointer",
         transition: "transform var(--dur-base) var(--ease-standard)",
-        transform: h ? "translateY(-3px)" : "none",
+        transform: shown ? "translateY(-3px)" : "none",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
@@ -42,17 +56,17 @@ function CustoCard({ t, d }) {
             lineHeight: 1,
             flexShrink: 0,
             transition: "transform var(--dur-base) var(--ease-standard), background var(--dur-base)",
-            transform: h ? "rotate(45deg)" : "none",
-            background: h ? "rgba(15,191,181,0.14)" : "transparent",
+            transform: shown ? "rotate(45deg)" : "none",
+            background: shown ? "rgba(15,191,181,0.14)" : "transparent",
           }}
         >
           +
         </span>
       </div>
-      <div style={{ maxHeight: h ? 220 : 0, opacity: h ? 1 : 0, overflow: "hidden", transition: "max-height var(--dur-slow) var(--ease-standard), opacity var(--dur-base) var(--ease-standard)" }}>
+      <div style={{ maxHeight: shown ? 220 : 0, opacity: shown ? 1 : 0, overflow: "hidden", transition: "max-height var(--dur-slow) var(--ease-standard), opacity var(--dur-base) var(--ease-standard)" }}>
         <p style={{ color: "var(--text-secondary)", fontSize: 14.5, lineHeight: 1.6, margin: "10px 0 0" }}>{d}</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -66,11 +80,11 @@ export default function Problema() {
         <div
           ref={cardRef}
           className="gsap-reveal"
-          style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top), var(--shadow-lg)", padding: "52px 52px" }}
+          style={{ borderRadius: 24, background: "var(--surface-raised)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top), var(--shadow-lg)", padding: "clamp(28px, 6vw, 52px)" }}
         >
           <div style={{ maxWidth: 780 }}>
             <SectionLabel>O problema</SectionLabel>
-            <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.4vw, 34px)", margin: "16px 0 18px" }}>Você domina o coração. Na carótida, trava.</h2>
+            <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.4vw, 34px)", margin: "16px 0 18px" }}>Você domina o coração. Na carótida, trava.</h2>
             <p style={{ color: "var(--text-secondary)", fontSize: 16.5, lineHeight: 1.7, margin: 0 }}>
               Você dá um jeito, segura o laudo mais tempo do que gostaria, ou libera sem ter segurança. Aprendeu a
               teoria, mas a prática real, guiada, teve quase nenhuma. Esse &quot;jeito&quot; sai caro em três frentes:

@@ -19,10 +19,10 @@ export default function ParaQuem() {
   useStaggerReveal(gridRef, ".gsap-reveal");
 
   return (
-    <section id="para-quem" style={{ padding: "96px 0 40px" }}>
+    <section id="para-quem" style={{ padding: "clamp(56px, 9vw, 96px) 0 40px" }}>
       <div className="pz-wrap">
         <div ref={headRef} className="gsap-reveal" style={{ marginBottom: 44 }}>
-          <h2 style={{ ...hSans, fontSize: "clamp(28px, 4vw, 40px)" }}>Para quem é essa imersão?</h2>
+          <h2 style={{ ...hSans, fontSize: "clamp(26px, 4vw, 40px)" }}>Para quem é essa imersão?</h2>
         </div>
         <div style={{ height: 1, background: "var(--border-subtle)", marginBottom: 40 }} />
         <div ref={gridRef} className="pz-grid-4">
@@ -32,7 +32,7 @@ export default function ParaQuem() {
               className="gsap-reveal"
               style={{ height: "100%", borderRadius: 16, background: "var(--surface-card)", border: "1px solid var(--border-subtle)", boxShadow: "var(--edge-top)", padding: 26 }}
             >
-              <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 18, lineHeight: 1.25, margin: "20px 0 10px", minHeight: 46, ...grad }}>{t}</h3>
+              <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 18, lineHeight: 1.25, margin: "0 0 10px", ...grad }}>{t}</h3>
               <p style={{ color: "var(--text-secondary)", fontSize: 14, lineHeight: 1.6, margin: 0 }}>{d}</p>
             </div>
           ))}

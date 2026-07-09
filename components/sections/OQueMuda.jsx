@@ -24,7 +24,7 @@ export default function OQueMuda() {
       <div className="pz-wrap">
         <div ref={headRef} className="gsap-reveal" style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 40px" }}>
           <SectionLabel>O que muda para você</SectionLabel>
-          <h2 style={{ ...hSans, fontSize: "clamp(26px, 3.6vw, 36px)", marginTop: 16 }}>Depois de 3 dias, o cenário no consultório é outro.</h2>
+          <h2 style={{ ...hSans, fontSize: "clamp(24px, 3.6vw, 36px)", marginTop: 16 }}>Depois de 3 dias, o cenário no consultório é outro.</h2>
         </div>
         <div ref={gridRef} className="pz-muda-grid" style={{ maxWidth: 940, margin: "0 auto" }}>
           {ITEMS.map((t, i) => (
