@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import GlowCTA from "@/components/GlowCTA";
 import { Button } from "@/components/ui";
-import { gsap, SplitText, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP } from "@/lib/gsap";
 import { WA_LINK, scrollToId, hSans, grad } from "@/lib/site";
 import heroImg from "@/public/assets/dr-cassio-hero.jpg";
 
@@ -30,12 +30,16 @@ export default function Hero() {
 
   useGSAP(
     () => {
-      const split = SplitText.create(h1Ref.current, { type: "lines", mask: "lines" });
+      // Above-the-fold entrance. No SplitText (fragile with web-font timing on
+      // iOS) — the headline fades in as a whole. Everything animates from a
+      // hidden state set in a layout effect, so if GSAP never loads the markup
+      // simply stays visible.
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      const tl = gsap.timeline({ defaults: { ease: "pzOut" }, delay: 0.12 });
+      const tl = gsap.timeline({ defaults: { ease: "pzOut" }, delay: 0.1 });
       tl.from(eyebrowRef.current, { y: -12, opacity: 0, duration: 0.6 })
         .from(chipsRef.current.children, { y: 12, opacity: 0, duration: 0.5, stagger: 0.08 }, "-=0.3")
-        .from(split.lines, { yPercent: 110, opacity: 0, duration: 0.9, stagger: 0.1 }, "-=0.2")
+        .from(h1Ref.current, { y: 18, opacity: 0, duration: 0.8 }, "-=0.2")
         .from(subRef.current, { y: 16, opacity: 0, duration: 0.6 }, "-=0.5")
         .from(ctaRef.current.children, { y: 14, opacity: 0, duration: 0.55, stagger: 0.08 }, "-=0.35")
         .from(microRef.current, { opacity: 0, duration: 0.5 }, "-=0.25")
@@ -43,8 +47,6 @@ export default function Hero() {
         // Reveal the hero image early (absolute t=0.15) with a quick fade so it
         // doesn't gate LCP, while still animating in.
         .fromTo(imgRef.current, { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.9 }, 0.15);
-
-      return () => split.revert();
     },
     { scope: root }
   );

@@ -9,15 +9,22 @@ export default function SmoothScroll({ children }) {
 
   useGSAP(
     () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      // ScrollSmoother is unreliable on iOS Safari and touch devices — only enable
+      // it on desktop pointers. Everywhere else we use native scrolling, which is
+      // rock-solid and keeps every IntersectionObserver reveal working.
+      const desktop = window.matchMedia("(min-width: 1025px) and (pointer: fine)").matches;
+
+      if (reduce || !desktop) {
+        ScrollTrigger.refresh();
+        return;
+      }
 
       const smoother = ScrollSmoother.create({
         wrapper: wrapperRef.current,
         content: contentRef.current,
         smooth: 1.15,
-        smoothTouch: 0.1,
         effects: true,
-        normalizeScroll: true,
       });
       window.__pzSmoother = smoother;
 

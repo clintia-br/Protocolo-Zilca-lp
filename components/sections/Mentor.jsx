@@ -19,11 +19,23 @@ export default function Mentor() {
 
   useGSAP(
     () => {
-      gsap.fromTo(
-        imgRef.current,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.1, ease: "pzOut", scrollTrigger: { trigger: imgRef.current, start: "top 90%", once: true } }
+      const el = imgRef.current;
+      if (!el) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || typeof IntersectionObserver === "undefined") {
+        return;
+      }
+      gsap.set(el, { y: 40, opacity: 0 });
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            gsap.to(el, { y: 0, opacity: 1, duration: 1.1, ease: "pzOut" });
+            io.disconnect();
+          }
+        },
+        { threshold: 0.15 }
       );
+      io.observe(el);
+      return () => io.disconnect();
     },
     { scope: imgRef }
   );

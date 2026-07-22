@@ -1,25 +1,30 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui";
-import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
 import { WA_LINK } from "@/lib/site";
 
 export default function StickyBar() {
   const [closed, setClosed] = useState(false);
   const barRef = useRef(null);
 
-  useGSAP(() => {
-    gsap.set(barRef.current, { yPercent: 140, opacity: 0 });
-    ScrollTrigger.create({
-      start: 620,
-      end: "max",
-      onUpdate: (self) => {
-        const show = self.scroll() > 620;
-        gsap.to(barRef.current, { yPercent: show ? 0 : 140, opacity: show ? 1 : 0, duration: 0.45, ease: "pzOut" });
-      },
-    });
-  }, {});
+  // Plain native scroll listener — reliable on every device (no ScrollTrigger).
+  useEffect(() => {
+    const el = barRef.current;
+    if (!el) return;
+    gsap.set(el, { yPercent: 140, opacity: 0 });
+    let shown = false;
+    const onScroll = () => {
+      const show = window.scrollY > 620;
+      if (show === shown) return;
+      shown = show;
+      gsap.to(el, { yPercent: show ? 0 : 140, opacity: show ? 1 : 0, duration: 0.45, ease: "pzOut" });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [closed]);
 
   if (closed) return null;
 
@@ -43,10 +48,10 @@ export default function StickyBar() {
         }}
       >
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ color: "#fff", fontSize: 15.5, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>Próximas turmas do Programa de Treinamento em Doppler de Carótidas</div>
-          <div style={{ color: "var(--text-muted)", fontSize: 13 }}>Turmas reduzidas · Um participante por aparelho · Formação presencial</div>
+          <div className="pz-sticky-title" style={{ color: "#fff", fontSize: 15.5, fontWeight: 600 }}>Próximas turmas do Programa de Treinamento em Doppler de Carótidas</div>
+          <div className="pz-sticky-sub" style={{ color: "var(--text-muted)", fontSize: 13 }}>Turmas reduzidas · Um participante por aparelho · Formação presencial</div>
         </div>
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", flexShrink: 0 }}>
           <Button variant="primary" size="md" style={{ borderRadius: 10, whiteSpace: "nowrap" }}>
             Quero me inscrever
           </Button>

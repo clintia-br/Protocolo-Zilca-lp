@@ -23,18 +23,23 @@ export default function TresDias() {
 
   useGSAP(
     () => {
-      if (!img1Ref.current) return;
-      gsap.fromTo(
-        img1Ref.current,
-        { clipPath: "inset(0 0 100% 0)", scale: 1.1 },
-        {
-          clipPath: "inset(0 0 0% 0)",
-          scale: 1,
-          duration: 1.1,
-          ease: "pzOut",
-          scrollTrigger: { trigger: mediaRef.current, start: "top 82%", once: true },
-        }
+      const el = img1Ref.current;
+      if (!el) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || typeof IntersectionObserver === "undefined") {
+        return;
+      }
+      gsap.set(el, { clipPath: "inset(0 0 100% 0)", scale: 1.1 });
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            gsap.to(el, { clipPath: "inset(0 0 0% 0)", scale: 1, duration: 1.1, ease: "pzOut" });
+            io.disconnect();
+          }
+        },
+        { threshold: 0.2 }
       );
+      io.observe(el);
+      return () => io.disconnect();
     },
     { scope: mediaRef }
   );

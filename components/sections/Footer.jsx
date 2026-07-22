@@ -9,11 +9,23 @@ export default function Footer() {
 
   useGSAP(
     () => {
-      gsap.fromTo(
-        ruleRef.current,
-        { scaleX: 0 },
-        { scaleX: 1, duration: 1, ease: "pzOut", scrollTrigger: { trigger: ruleRef.current, start: "top 96%", once: true } }
+      const el = ruleRef.current;
+      if (!el) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || typeof IntersectionObserver === "undefined") {
+        return;
+      }
+      gsap.set(el, { scaleX: 0 });
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            gsap.to(el, { scaleX: 1, duration: 1, ease: "pzOut" });
+            io.disconnect();
+          }
+        },
+        { threshold: 0.5 }
       );
+      io.observe(el);
+      return () => io.disconnect();
     },
     { scope: ruleRef }
   );
